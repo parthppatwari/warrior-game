@@ -7,5 +7,9 @@ var score = 0
 
 func add_coin():
 	score+=1
-	score_lable.text = "you have collected " + str(score) + " coins"
+	if score == 25:
+		score_lable.text = "You have Collected all Coins"
+		get_tree().reload_current_scene()
+	else:
+		score_lable.text = "You Collected " + str(score) + " Coins"
 	
