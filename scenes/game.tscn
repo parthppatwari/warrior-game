@@ -402,7 +402,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(585, -685)
+position = Vector2(-444, 16)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4, 4)
@@ -646,75 +646,3 @@ position = Vector2(1139, -652)
 
 [node name="Slime21" parent="enemies" instance=ExtResource("6_p57ef")]
 position = Vector2(1091, -588)
-
-[node name="coin" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(407, -681)
-
-[node name="coin2" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(404, -660)
-
-[node name="coin3" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(417, -668)
-
-[node name="coin4" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(424, -646)
-
-[node name="coin5" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(408, -646)
-
-[node name="coin6" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(425, -689)
-
-[node name="coin7" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(411, -698)
-
-[node name="coin8" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(473, -688)
-
-[node name="coin9" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(495, -698)
-
-[node name="coin10" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(466, -702)
-
-[node name="coin11" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(494, -680)
-
-[node name="coin12" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(465, -644)
-
-[node name="coin13" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(405, -631)
-
-[node name="coin14" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(462, -680)
-
-[node name="coin15" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(426, -675)
-
-[node name="coin16" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(463, -632)
-
-[node name="coin17" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(420, -631)
-
-[node name="coin18" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(480, -648)
-
-[node name="coin19" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(499, -647)
-
-[node name="coin20" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(481, -699)
-
-[node name="coin21" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(523, -644)
-
-[node name="coin22" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(516, -633)
-
-[node name="coin23" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(547, -656)
-
-[node name="coin24" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(549, -636)
