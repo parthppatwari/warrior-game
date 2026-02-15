@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://c364hmvbxqtjp"]
+
+[ext_resource type="Script" uid="uid://dftwrpughcdoe" path="res://scripts/pause_menu.gd" id="1_ge5bi"]
+[ext_resource type="Shader" uid="uid://d37h6a2swlmpu" path="res://assets/shader/pause_menu.gdshader" id="2_7htyk"]
+[ext_resource type="FontFile" uid="uid://djf8o3s86iixv" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_y72sm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1krw"]
+shader = ExtResource("2_7htyk")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_bob8p"]
+resource_name = "pause"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.800000038]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vk0un"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5uant"]
+_data = {
+&"RESET": SubResource("Animation_vk0un"),
+&"pause": SubResource("Animation_bob8p")
+}
+
+[node name="pauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.82800007
+anchor_bottom = 0.75600004
+offset_left = 10.0
+offset_top = 5.0
+offset_right = -239.85608
+offset_bottom = -88.88803
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ge5bi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_s1krw")
+layout_mode = 0
+offset_left = -10.0
+offset_top = -5.0
+offset_right = 793.0
+offset_bottom = 478.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 162.0
+offset_right = 519.0
+offset_bottom = 306.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y72sm")
+text = "Resume"
+
+[node name="restart" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y72sm")
+text = "Restart"
+
+[node name="quit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_y72sm")
+text = "Quit
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5uant")
+}
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
