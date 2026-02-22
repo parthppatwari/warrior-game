@@ -11,7 +11,7 @@ func pause():
 	get_tree().paused = true
 	
 func testEsc():
-	print("testEsc called")
+	#print("testEsc called")
 	if Input.is_action_just_pressed("pause") and !get_tree().paused:
 		print("4444444444444444444444444444444")
 		get_tree().paused = true
